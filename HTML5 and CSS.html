@@ -1,0 +1,454 @@
+<html charset="utf-8" pageEncoding="utf-8">
+
+<!-- 
+1.欢迎来到FreeCodeCamp的第一个编码挑战！
+
+整个课程的设计围绕两个原则：所见即所得、循序渐进。
+
+界面简洁直观，左边是课程区、中间是编辑区、右边是结果区。
+
+HTML是英文Hper Text Markup Language(超文本标记语言)的缩写。
+
+你看到<h1>Hello</h1>了吗?
+
+h1就是一个HTML元素，h1是header1的简写，意思是一级标题。
+
+大部分元素都有一个开始标记和一个结束标记。
+
+开始标记像这样：<h1>
+结束标记像这样：</h1>
+
+开始标记和结束标记的唯一区别就是结束标记多了一个/。
+
+2.标题通常是网站结构的头部分，h1是主标题(一级标题)，h2是副标题，h3、h4、h5、h6依次递减字体的大小。
+
+3.P是英文paragraph段落的缩写，经常被用来创建一个段落，就和你写作文一样。
+
+4.注释有两个功能：
+
+	1、想让某一段代码不起作用，但你又不想删除这一段代码。
+
+	2、就是给代码添加一些说明，方便团队合作或日后自己查看，但又不想影响代码本身。
+
+5.现在让我们来改变某些文本的颜色。
+
+我们可以通过修改h2元素的style(样式)来达到目的。
+
+样式的属性有很多，其中color用来指定颜色。
+
+以下是将你的h2元素的文本颜色设置为蓝色的示例代码：
+
+<h2 style="color: blue">CatPhotoApp</h2>
+
+
+6.样式的属性多达几千个，但别担心，常用的也就几十个，你完全可以掌握它。
+
+当你键入<h2 style="color: red">CatPhotoApp</h2>，你就给h2元素添加了inline style(内联样式)。
+
+内联样式是为元素添加样式的一种途径，但是更好的途径是使用层叠样式表CSS（Cascading Style Sheets）。
+
+在代码的最顶端，创建一个如下的style元素：
+
+<style>
+</style>
+在这个style元素内, 你可以为所有的h2元素创建一个元素选择器。比如，如果你想要将所有的h2元素设置为红色, 你的代码应该看起来像这样：
+
+<style>
+??选择器 {属性名称: 属性值;}
+??h2 {color: red;}
+</style>
+注意：一定要在属性值的后面加上分号;。	
+
+7.上节课我们学习了元素选择器，这节课我们学习class选择器。
+
+我们先声明一个class选择器：
+
+<style>
+  .blue-text {
+    color: blue;
+  }
+</style>
+上面的代码在 <style> 标记中创建了一个叫做 blue-text 的 CSS class。
+
+然后在h2元素上应用我们声明的class选择器：
+
+<h2 class="blue-text">CatPhotoApp</h2>
+
+注意：在CSS中，class前应该添加.为前缀。
+
+而在HTML中，class前不能以.为前缀。
+
+这是因为在CSS中如果class前不添加. 浏览器就会误认为class是一个HTML元素。
+
+
+8.你可以在 HTML 元素的开始标记中通过使用class="your-class-here"将 class 附加到相关元素中。
+
+CSS class 选择器必须添加.为前缀，如下：
+
+.blue-text {
+  color: blue;
+}
+但在HTML中class属性的值不需要添加.为前缀，如下：
+
+<h2 class="blue-text">CatPhotoApp</h2>
+
+9.字号是由样式属性font-size来控制的, 如下：
+
+h1 {
+??font-size: 30px;
+}
+
+10.用font-family属性来设置元素的字体。
+
+如果你想把你的h2元素的字体设置为Sans-serif，你可以使用下面的CSS：
+
+h2 {
+??font-family: Sans-serif;
+}
+
+11.现在，让我们来导入谷歌字体。
+
+首先，你需要用link标签来引入谷歌Lobster字体。
+
+复制下面的代码片断并将其粘贴到你的代码编辑器的顶部：
+
+<link href="https://fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+
+现在你可以将Lobster作为 font-family 的值应用到你的h2元素上了。
+
+
+12.有几种默认的字体是所有浏览器都可用的，包括Monospace、Serif和Sans-Serif。
+
+当某种字体不可用时，你可以告诉浏览器“降级”到另一种字体。
+
+例如，如果你想对某元素应用Helvetica字体，但你同时想在Helvetica不可用时降级使用Sans-Serif字体，你可以使用如下CSS样式：
+
+p {
+??font-family: Helvetica, Sans-Serif;
+}
+
+
+13.使用img元素来为你的网站添加图片，使用src属性指向一个图片的具体地址。
+
+举例如下：
+
+<img src="https://www.your-image-source.com/your-image.jpg">
+
+注意：img元素是自关闭元素，不需要结束标记。
+
+14.CSS包含一个控制元素宽度的width属性。像控制字体一样，我们使用px（像素）来指定图片的宽度。
+
+例如，如果我们想要创建一个名为larger-image的CSS class，把HTML元素的宽度设定为500像素，我们使用：
+
+<style>
+  .larger-image {
+    width: 500px;
+  }
+</style>
+
+15. Add Borders Around your Elements
+CSS 边框的属性有style(样式)、color(颜色)、width(宽度)、height(高度)等。
+
+举个例子，如果我们想要让一个HTML元素的边框颜色为红色、边框宽度为5像素(pixel)、边框样式为固体(solid)，代码如下:
+
+<style>
+  .thin-red-border {
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+  }
+</style>
+任务：创建一个叫thick-green-border的class，让它的边框宽度为10像素、边框样式为solid(固体)、边框颜色为绿色(green)，然后把这个class应用到你的猫咪照片上。
+
+提示：你可以应用多个class到一个元素，只需要在多个class之间用空格分开即可。例如：
+
+<img class="class1 class2">
+
+
+16. Add Rounded Corners with a Border Radius
+你的猫咪图片的边框现在是尖尖的，不够可爱，我们可以通过CSS的一个叫border-radius(边框半径)的属性来让它的边框变成圆的。
+
+你可以用像素来指定border-radius的属性值，现在让你的猫咪图片的边框半径为10px吧。
+
+注意：这个任务有多种解决方案。你可以添加border-radius到.thick-green-border class 也可以添加到.smaller-image class.
+
+除了像素，你还可以使用百分比来指定border-radius边框半径的值。
+
+给你的猫咪图片一个50%的border-radius。
+
+17. Link to External Pages with Anchor Elements
+a元素, 也叫anchor（锚点）元素，既可以用来链接到外部页面实现超链接功能，也可以链接到当前页面的某部分实现导航功能。
+Here's an example:
+Nesting（嵌套）就是把一个元素放在另一个元素里面。
+<p>Here's a <a href="http://freecodecamp.com"> link to Free Code Camp</a> for you to follow.</p>
+
+18.Make Dead Links using the Hash Symbol
+有时你想为你的网站添加一个a元素，但此时你还不知道要将它们链接到哪儿，此时可以使用死链接。
+
+当使用我们后面学到的jQuery改变一个链接的行为时，使用死链接也是非常方便的。
+
+把你的a元素的href属性的值替换为一个#，别名hash（哈希）符号，将其变为一个死链接。
+
+19.Turn an Image into a Link
+你可以通过把某元素嵌套进a元素使其变成一个链接。
+
+把你的图片嵌套进a元素。举例如下：
+
+<a href="#"><img src="https://bit.ly/fcc-running-cats"></a>
+
+记得将#作为a元素的href属性，使其变为一个死链接。
+
+一旦完成，把你的光标悬停在你的图片上。你的光标此时应该由光标指针变成手形指针。图片现在是一个链接了。
+
+
+20.Add Alt Text to an Image for Accessibility
+alt属性，也被称为alt text, 是当图片无法加载时显示的替代文本。alt属性对于盲人或视觉损伤的用户理解一幅图片中所描绘的内容非常重要，搜索引擎也会搜索alt属性。
+
+简而言之，每一张图片都应该有一个alt属性！
+
+你可以像下面例子中一样为img元素添加一个alt属性：
+
+<img src="www.your-image-source.com/your-image.jpg" alt="your alt text">
+
+
+21.Create a Bulleted Unordered List
+HTML有一个特殊元素，用于创建unordered lists（无序列表）, 或带项目符号的列表。
+
+无序列表以<ul>元素开始，并包含一个或多个<li>元素。
+
+例如：
+
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+将会创建一个带项目符号的"milk"和"cheese"列表。
+
+22.Create an Ordered List
+HTML有一个特殊元素，用于创建ordered lists（有序列表）, 或数字编号列表。
+
+有序列表以<ol>元素开始，并包含一个或多个<li>元素。
+
+例如：
+
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+将创建一个包含"Garfield"和"Sylvester"的数字编号列表。
+
+23.Create a Text Field
+现在让我们来创建一个form(表单)。
+
+Text input(文本输入框)是获得用户输入的一条方便途径。
+
+你可以用如下方法创建：
+
+<input type="text">
+
+注意，input元素是自关闭的。
+
+23.Add Placeholder Text to a Text Field
+占位符(placeholder text)是用户在input(输入)框输入任何东西之前放置在input(输入)框中的预定义文本。
+
+你可以用如下方式创建占位符：
+
+<input type="text" placeholder="this is placeholder text">
+
+24.Create a Form Element
+	使用HTML来构建可以跟服务器交互的Web表单(form)，通过给你的form元素添加一个动作action来达到此目的。
+
+例如：
+
+<form action="/url-where-you-want-to-submit-form-data"></form>
+25.Add a Submit Button to a Form
+让我们来为你的form添加一个submit(提交)按钮，点击这个按钮，数据将会从你的form发送到你通过action属性指定的URL上。
+
+下面是submit按钮的例子：
+
+<button type="submit">this button submits the form</button>
+
+为你的form元素添加一个type为submit的提交按钮，用"Submit"作按钮文本。
+
+26.Use HTML5 to Require a Field
+当你设计表单时，你可以使指定某些选项为必填项(required)，只有当用户填写了该选项后，用户才能够提交表单。
+
+例如，如果你想把一个文本输入字段设置为必填项，在你的input元素中加上required这个单词就可以了，你可以使用：
+<input type="text" required>
+
+任务：给你的输入框添加required字段，这样你的用户不填写输入框就无法提交表单。
+
+然后，试试不填写任何文本提交表单，看看你的HTML5表单如何提示你该字段为必填项。
+
+注意：该字段在Safari浏览器中不起作用。
+
+27.Create a Set of Radio Buttons
+类比是最好的学习方式，当你搞不清一个概念时，最好在生活中找到对应的案例。
+
+单选就是你只能在多个选项中选择一个，就好比你有很多追求者，但却只能选择一个结婚。
+
+多选一的场景就用radio button(单选按钮)
+
+单选按钮是input输入框的一种类型。
+
+每一个单选按钮都应该嵌套在它自己的label(标签)元素中。
+
+重点：所有关联的单选按钮应该使用相同的name属性。
+
+下面是一个单选按钮的例子：
+
+<label><input type="radio" name="indoor-outdoor"> Indoor</label>
+
+给你的表单添加两个单选按钮，一个叫indoor，另一个叫outdoor。
+
+
+
+
+
+
+
+
+-->
+
+
+<head>
+	<title>博客首页</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- 
+  <meta charset="utf-8"> 
+  
+  
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./homepage.css">
+  <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  -->
+</head>
+<body>
+
+
+
+
+
+<style>
+  .red-text {
+    color: red;
+  }
+  p {
+    font-size: 16px;
+    font-family: Monospace;
+  }
+ .larger-image {
+    width: 500px;
+	height:300px;
+  }
+  
+.thick-green-border {
+    border-width: 30px;
+    border-style: solid;
+    border-color: green;
+	border-radius:50%;
+}
+  
+  
+</style>
+
+
+<h1 class="thick-green-border" style="color:red"> 213</h1>
+
+<h2 style="font-size: 53px;" class="red-text">我家的猫咪</h2>
+
+<img class="larger-image thick-green-border"  src="https://www.freecodecamp.cn/images/relaxing-cat.jpg">
+
+
+
+<a href="http://freecatphotoapp.com">cat photos</a>
+
+<p>Things cats love:</p>
+<ul>
+  <li>cat nip</li>
+  <li>laser pointers</li>
+  <li>lasagna</li>
+</ul>
+<p>Top 3 things cats hate:</p>
+<ol>
+  <li>flea treatment</li>
+  <li>thunder</li>
+  <li>other cats</li>
+</ol>
+
+<input type="text" style="width:500px" placeholder="输入前提示一下你"> <button  type="submit" class="btn btn-default" style="color:red">So easy!</button>
+
+<form action="http://www.baidu.com/s?wd=">
+<input type="text" style="width:500px" placeholder="输入前提示一下你" required> <button  type="submit" class="btn btn-default" style="color:red">百度一下!</button>
+</form>
+
+<label>
+<input type="radio" name="indoor-outdoor"> Indoor
+<input type="radio" name="indoor-outdoor"> Outdoor
+</label>
+
+
+<p style="color:blue">在大家心目中，猫是慵懒的可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
+
+Here's an example:
+
+<p>Here's a <a href="http://freecodecamp.com"> link to Free Code Camp</a> for you to follow.</p>
+
+<img  src="https://i.imgur.com/hviuZwe.png">
+
+
+<a href="http://www.163.com"><img src="https://www.freecodecamp.c/images/relaxing-cat.jpg" alt="貌似找不到地址了。。。。"></a>
+
+<p>
+ 养动物有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，狗狗和猫猫会到处拉屎，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，狗猫慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。
+</p>
+
+
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">TMY Blog</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#">我的首页</a></li>
+        <li><a href="#">账号管理</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">账号管理
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">管理</li>
+            <li><a href="#">博客信息</a></li>
+            <li><a href="#">创建博文</a></li>
+            <li><a href="#">博客管理</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">账号</li>
+            <li><a href="#">更改密码</a></li>
+            <li><a href="#">退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="关键字">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
